@@ -5,10 +5,8 @@
 ![level](https://img.shields.io/badge/Level-Intermediate-orange)
 ![license](https://img.shields.io/badge/License-DACR-lightgrey)
 
-> **Recommended repo name:** `ai-ba-21day-accelerator`
-
-Welcome to the **AI-Enabled Business Analyst Program**.  
-This 3-week journey takes mid-level BAs (or pros transitioning into BA roles) from *zero AI* to *job-ready, AI-powered delivery*.
+> **Recommended repo name:** `ai-ba-21day-accelerator`  
+> **Program summary (≤300 chars):** 21-day accelerator for business analysts to master applied AI. Daily lessons and mini-projects cover RAG, automation, data viz, APIs, testing, and stakeholder comms—ending with a portfolio-ready capstone and AI-assisted BRD.
 
 ---
 
@@ -40,8 +38,6 @@ Learn AI basics, from “what is an LLM?” to writing your first AI-assisted BR
 - **Day 6:** Case Studies — AI in slow-moving industries  
 - **Day 7:** **Mini-Project 1** — Draft a BRD w/ AI assistance  
 
----
-
 ### Week 2 — Applied Tools
 Hands-on AI in BA workflows.
 
@@ -52,8 +48,6 @@ Hands-on AI in BA workflows.
 - **Day 12:** API Docs + Swagger/Postman with AI  
 - **Day 13:** AI for UAT & Testing Docs  
 - **Day 14:** **Mini-Project 2** — BRD + Process Flow refinement  
-
----
 
 ### Week 3 — Advanced BA + AI
 Build career-defining skills & produce portfolio artifacts.
@@ -77,13 +71,7 @@ Build career-defining skills & produce portfolio artifacts.
 ---
 
 ## 🛠 Tools Covered
-- **LLMs:** ChatGPT, Claude, Gemini  
-- **BA Tools:** Jira, Confluence, Trello  
-- **Office:** Excel, Google Sheets  
-- **Process Maps:** Lucidchart, Mermaid, Visio  
-- **Data Viz:** PowerBI, Tableau, RShiny  
-- **APIs:** Swagger, Postman, GitHub Copilot  
-- **Automation:** Zapier, Make, Power Automate  
+**LLMs:** ChatGPT, Claude, Gemini • **BA Tools:** Jira, Confluence, Trello • **Office:** Excel, Google Sheets • **Process Maps:** Lucidchart, Mermaid, Visio • **Data Viz:** PowerBI, Tableau, RShiny • **APIs:** Swagger, Postman, GitHub Copilot • **Automation:** Zapier, Make, Power Automate
 
 ---
 
@@ -94,7 +82,7 @@ Build career-defining skills & produce portfolio artifacts.
 git clone https://github.com/<you>/ai-ba-21day-accelerator.git
 cd ai-ba-21day-accelerator
 
-# 2) Open README and choose your starting week/day
+# 2) Open README and pick your starting week/day
 # 3) Use the /Projects folders as your submission targets
 ````
 
@@ -144,50 +132,43 @@ ai-ba-21day-accelerator/
 
 ---
 
-## 🧭 Program Map (Mermaid)
+## 🧭 Program Maps (Mermaid)
 
-> GitHub renders Mermaid automatically. No plugin needed.
+> GitHub renders Mermaid automatically. If a diagram fails to render, ensure you copied the full fenced code block (including \`\`\`mermaid).
 
 ### 1) 3-Week Flow → Projects → Capstone
 
 ```mermaid
 flowchart LR
-  classDef wk fill:#0b4,stroke:#083,stroke-width:1,color:#fff;
-  classDef proj fill:#036,stroke:#024,stroke-width:1,color:#fff;
-  classDef cap fill:#600,stroke:#400,stroke-width:1,color:#fff;
-
   subgraph W1[Week 1 — Foundations]
-    D1[Day 1–3\nAI basics] --> D4[Day 4\nPrompt Eng.]
-    D4 --> D5[Day 5\nRequirements + AI]
-    D5 --> D6[Day 6\nIndustry cases]
-    D6 --> D7[Day 7\nMiniProject 1: BRD Draft]
+    D1["Day 1–3<br/>AI basics"] --> D4["Day 4<br/>Prompt Eng."]
+    D4 --> D5["Day 5<br/>Requirements + AI"]
+    D5 --> D6["Day 6<br/>Industry cases"]
+    D6 --> D7["Day 7<br/>Mini-Project 1: BRD Draft"]
   end
-  class W1 wk
 
   subgraph W2[Week 2 — Applied Tools]
-    D8[Day 8\nJira/Confluence] --> D9[Day 9\nSheets + Copilots]
-    D9 --> D10[Day 10\nProcess Maps]
-    D10 --> D11[Day 11\nMeetings/Transcripts]
-    D11 --> D12[Day 12\nAPIs + Swagger]
-    D12 --> D13[Day 13\nUAT/Testing Docs]
-    D13 --> D14[Day 14\nMiniProject 2: BRD + Flow]
+    D8["Day 8<br/>Jira/Confluence"] --> D9["Day 9<br/>Sheets + Copilots"]
+    D9 --> D10["Day 10<br/>Process Maps"]
+    D10 --> D11["Day 11<br/>Meetings/Transcripts"]
+    D11 --> D12["Day 12<br/>APIs + Swagger"]
+    D12 --> D13["Day 13<br/>UAT/Testing Docs"]
+    D13 --> D14["Day 14<br/>Mini-Project 2: BRD + Flow"]
   end
-  class W2 wk
 
   subgraph W3[Week 3 — Advanced BA + AI]
-    D15[Day 15\nData Viz] --> D16[Day 16\nAgentic Automation]
-    D16 --> D17[Day 17\nResponsible AI]
-    D17 --> D18[Day 18\nStakeholder Comms]
-    D18 --> D19[Day 19\nMock E2E]
-    D19 --> D20[Day 20\nResume/LinkedIn]
-    D20 --> D21[Day 21\nCapstone Pitch]
+    D15["Day 15<br/>Data Viz"] --> D16["Day 16<br/>Agentic Automation"]
+    D16 --> D17["Day 17<br/>Responsible AI"]
+    D17 --> D18["Day 18<br/>Stakeholder Comms"]
+    D18 --> D19["Day 19<br/>Mock E2E"]
+    D19 --> D20["Day 20<br/>Resume/LinkedIn"]
+    D20 --> D21["Day 21<br/>Capstone Pitch"]
   end
-  class W3 wk
 
-  MP1{{MiniProject 1\nBRD Draft}}:::proj
-  MP2{{MiniProject 2\nProcess Flow + BRD}}:::proj
-  MP3{{MiniProject 3\nRefined BRD + Tests}}:::proj
-  CAP([Capstone:\nAI BA Portfolio Pitch]):::cap
+  MP1{{"Mini-Project 1<br/>BRD Draft"}}
+  MP2{{"Mini-Project 2<br/>Process Flow + BRD"}}
+  MP3{{"Mini-Project 3<br/>Refined BRD + Tests"}}
+  CAP(["Capstone:<br/>AI BA Portfolio Pitch"])
 
   D7 --> MP1
   D14 --> MP2
@@ -197,18 +178,18 @@ flowchart LR
   MP3 --> CAP
 ```
 
-### 2) The Daily Loop (What to Expect Each Day)
+### 2) The Daily Loop (What to Expect Each Day) — **fixed**
 
 ```mermaid
 flowchart LR
-  A[Learn: short lesson\n+ examples] --> B[Do: guided exercise\n(checklist & prompts)]
-  B --> C[Deliver: upload\nBRD/diagram/test doc]
-  C --> D[Review: rubric + AI feedback\nsources & confidence]
-  D --> E[Reflect: 3 bullets\nwins / risks / next]
+  A["Learn: short lesson<br/>+ examples"] --> B["Do: guided exercise<br/>checklist + prompts"]
+  B --> C["Deliver: upload<br/>BRD / diagram / test doc"]
+  C --> D["Review: rubric + AI feedback<br/>sources + confidence"]
+  D --> E["Reflect: 3 bullets<br/>wins · risks · next step"]
   E --> B
 ```
 
-### 3) Gantt Schedule (Adjust dates if needed)
+### 3) Gantt Schedule (adjust dates as needed)
 
 ```mermaid
 gantt
@@ -217,10 +198,10 @@ gantt
   axisFormat  %b %d
 
   section Week 1 — Foundations
-  Lessons & BRD draft        :active,  w1, 2025-01-01, 7d
+  Lessons & BRD draft        :active,  w1, 2025-09-01, 7d
 
   section Week 2 — Applied Tools
-  Tools + MiniProject 2      :active,  w2, after w1, 7d
+  Tools + Mini-Project 2     :active,  w2, after w1, 7d
 
   section Week 3 — Advanced + Capstone
   Advanced + Portfolio       :active,  w3, after w2, 5d
@@ -245,7 +226,7 @@ gantt
 ## 🔐 License & Notes
 
 * License: **DACR** (Defensive AI Commercial Rights)
-* Keep sensitive data out of the repo. Use synthetic or public examples where needed.
+* Keep sensitive data out of the repo. Use synthetic/public examples where needed.
 
 ---
 
@@ -253,7 +234,7 @@ gantt
 
 By Day 21 you will:
 
-* Confidently explain and apply AI in BA workflows
+* Confidently apply AI in BA workflows
 * Produce AI-assisted deliverables that *ship*
 * Present a polished **AI BA portfolio pitch** ready for hiring managers
 
