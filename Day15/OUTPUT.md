@@ -1,5 +1,3 @@
-File: output.md
-
 # 📊 Day 15 — KPI Dashboard & Narrative (Sample Output)
 
 ---
@@ -15,7 +13,7 @@ Note: Customer Satisfaction Score (CSAT) = `placeholder` (data not yet captured)
 ## Section 2: Visuals & Narrative
 
 ### KPI Tiles
-![KPI Tiles](assets/dashboard_kpis.png)
+Visual reference: `assets/dashboard_kpis.png`
 
 - **Insight** — Enterprise revenue +10% QoQ; SMB revenue −3%.  
 - **Cause Hypothesis** — Enterprise upsells strong; SMB churn rising.  
@@ -42,7 +40,7 @@ Note: Customer Satisfaction Score (CSAT) = `placeholder` (data not yet captured)
 ---
 
 ### Variance Waterfall (Plan vs Actual)
-![Plan vs Actual Variance](assets/dashboard_variance.png)
+Visual reference: `assets/dashboard_variance.png`
 
 - **Insight** — $900K shortfall vs plan, driven by churn + infra costs.  
 - **Cause Hypothesis** — Vendor contract overages; high Q2 exits.  
@@ -93,7 +91,8 @@ Together, the visuals balance performance monitoring with actionable next steps 
 
 ✅ **Submission Checklist**
 - [x] File saved as `Day15_ai_data_viz.md` or `output.md`  
-- [x] Image links are repo-relative (`assets/...`)  
+- [x] Image references shown as repo-relative code (`assets/...`) — not clickable links  
 - [x] Placeholders used instead of invented data  
 - [x] ≤5 visuals, each with Insight + Action (owner/date)  
 - [x] Export guidance included for PowerBI, Tableau, and R  
+
