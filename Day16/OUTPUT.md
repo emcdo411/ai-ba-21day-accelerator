@@ -204,13 +204,14 @@ Notes on limits/rate limits:
 
 ```mermaid
 flowchart TD
-  A[Webform Lead] --> B[Idempotency Check (KV)]
-  B -->|new| C[LLM Classify (tier/intent)]
-  C --> D[CRM Upsert]
-  D --> E[Success Log]
-  C -->|error| F[Retry 1m -> 4m -> 15m]
-  F -->|exhausted| G[DLQ + Page]
-  B -->|duplicate| H[End]
+  A["Webform Lead"] --> B["Idempotency Check (KV)"]
+  B -->|new| C["LLM Classify (tier/intent)"]
+  B -->|duplicate| H["End"]
+  C --> D["CRM Upsert"]
+  D --> E["Success Log"]
+  C -->|error| F["Retry 1m/4m/15m"]
+  F -->|exhausted| G["DLQ + Page"]
+
 ```
 
 Notes on limits/rate limits:
