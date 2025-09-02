@@ -168,8 +168,3 @@ See: [kpi\_backlog\_sheet.csv](kpi_backlog_sheet.csv)
 * Do KPIs communicate “what changed and why” with owners/dates?
 
 ```
-
----
-
-If you want, I can also add a **link to this file** in your Day 14 README (“What a good submission looks like”) so students see it immediately.
-```
