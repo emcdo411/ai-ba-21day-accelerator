@@ -128,8 +128,6 @@ flowchart LR
   end
 
   C1 --> O1 --> F1 --> O2 --> O3 --> C2
-
-
 ```
 
 **Design Deltas**
