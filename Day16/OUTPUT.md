@@ -223,14 +223,15 @@ Notes on limits/rate limits:
 
 ```mermaid
 flowchart TD
-  A[Error Metrics] --> B[Idempotency Check (KV)]
-  B -->|new| C[LLM Incident Note]
-  C --> D[Create Incident]
-  D --> E[Notify #on-call]
-  D --> F[Success Log]
-  C -->|error| G[Retry 1m -> 4m -> 15m]
-  G -->|exhausted| H[DLQ + Page]
-  B -->|duplicate| I[End]
+  A["Error Metrics"] --> B["Idempotency Check (KV)"]
+  B -->|new| C["LLM Incident Note"]
+  B -->|duplicate| I["End"]
+  C --> D["Create Incident"]
+  D --> E["Notify #on-call"]
+  D --> F["Success Log"]
+  C -->|error| G["Retry 1m/4m/15m"]
+  G -->|exhausted| H["DLQ + Page"]
+
 ```
 
 Notes on limits/rate limits:
