@@ -128,6 +128,7 @@ graph LR
   end
 
   C1 --> O1 --> F1 --> O2 --> O3 --> C2
+
 ```
 
 **Design Deltas**
@@ -202,12 +203,6 @@ Use this outline:
 
 **Bottlenecks:** B1, B2, B3 (with 2 fixes each)
 **KPI impact:** Lead time, FPY, Error rate (direction + rough % if known)
-
-## Target State (Mermaid)
-
-```mermaid
-...target diagram...
-```
 
 **Deltas:** What changed and why
 **KPI impact:** Expected directional change
