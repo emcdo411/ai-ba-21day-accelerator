@@ -111,15 +111,24 @@ flowchart LR
 ### Target State (leaner, fewer handoffs)
 
 ```mermaid
-%% Target State - reduced handoffs, automation added, lanes consistent
 flowchart LR
-  classDef lane fill:#eef9f1,stroke:#9cd3b6,color:#0b5137,stroke-width:1;
+  subgraph Customer
+    C1["Submit Order"]
+    C2["Confirmation + Tracking"]
+  end
 
-  C1["Cust: Submit Order"]:::lane --> O1["Ops: Risk-Scored Pre-Auth"]:::lane
-  O1 --> F1["Fin: Auto Capture (Retry x3)"]:::lane
-  F1 --> O2["Ops: Pick-Pack (Auto Label)"]:::lane
-  O2 --> O3["Ops: Ship & Confirm"]:::lane
-  O3 --> C2["Cust: Confirmation + Tracking"]:::lane
+  subgraph Operations
+    O1["Risk-Scored Pre-Auth"]
+    O2["Pick-Pack (Auto Label)"]
+    O3["Ship & Confirm"]
+  end
+
+  subgraph Finance
+    F1["Auto Capture (Retry x3)"]
+  end
+
+  C1 --> O1 --> F1 --> O2 --> O3 --> C2
+
 ```
 
 **Design Deltas**
