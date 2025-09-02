@@ -111,20 +111,20 @@ flowchart LR
 ### Target State (leaner, fewer handoffs)
 
 ```mermaid
-flowchart LR
+graph LR
   subgraph Customer
-    C1["Submit Order"]
-    C2["Confirmation & Tracking"]
+    C1[Submit Order]
+    C2[Confirmation & Tracking]
   end
 
   subgraph Operations
-    O1["Risk-Scored Pre-Auth"]
-    O2["Pick-Pack (Auto Label)"]
-    O3["Ship & Confirm"]
+    O1[Risk-Scored Pre-Auth]
+    O2[Pick-Pack (Auto Label)]
+    O3[Ship & Confirm]
   end
 
   subgraph Finance
-    F1["Auto Capture (Retry x3)"]
+    F1[Auto Capture (Retry x3)]
   end
 
   C1 --> O1 --> F1 --> O2 --> O3 --> C2
