@@ -112,12 +112,23 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  %% Target State - reduced handoffs, automation added
-  C1["Cust: Submit Order"] --> O1["Ops: Risk-Scored Pre-Auth"]
-  O1 --> F1["Fin: Auto Capture (Retry x3)"]
-  F1 --> O2["Ops: Pick-Pack (Auto Label)"]
-  O2 --> O3["Ops: Ship & Confirm"]
-  O3 --> C2["Cust: Confirmation + Tracking"]
+  subgraph Customer
+    C1["Submit Order"]
+    C2["Confirmation & Tracking"]
+  end
+
+  subgraph Operations
+    O1["Risk-Scored Pre-Auth"]
+    O2["Pick-Pack (Auto Label)"]
+    O3["Ship & Confirm"]
+  end
+
+  subgraph Finance
+    F1["Auto Capture (Retry x3)"]
+  end
+
+  C1 --> O1 --> F1 --> O2 --> O3 --> C2
+
 
 ```
 
