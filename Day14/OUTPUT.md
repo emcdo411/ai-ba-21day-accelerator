@@ -1,121 +1,132 @@
 <!-- FILE: Projects/MiniProject2_ProcessFlow/EXPECTED_OUTPUT.md -->
+
 # MiniProject2 — Sample Submission (What “Good” Looks Like)
 
-> **Purpose:** Show students the shape, depth, and linking quality we expect.  
-> **Note:** This is a *sample*, not a template to copy verbatim. Replace all placeholders (`{{...}}`) in your own work.
+> **Purpose:** Help you understand the expected structure, clarity, and linking quality for your deliverables.
+> **Note:** This is a *sample*, not a template. Do **not** copy it verbatim. Replace all placeholders (`{{...}}`) and make sure your links point to the **actual paths in your repo**.
 
 ---
 
-## 👀 Visual Index (All Artifacts Linkable)
+## 👀 Visual Index (All Artifacts Must Be Linkable)
 
-- **BRD v2:** [BRD_v2.md](BRD_v2.md)  
-- **Decision Log:** [decision_log.md](decision_log.md)  
-- **Process Maps:** Current → ![process_current.png](process_current.png) · Target → ![process_target.png](process_target.png)  
-- **API:** [openapi.yaml](../../tools/openapi.yaml)  
-- **Postman Collection:** [postman_collection.json](postman_collection.json)  
-- **UAT Plan:** [uat_test_plan.md](uat_test_plan.md)  
-- **Test Cases:** [uat_test_cases.csv](uat_test_cases.csv)  
-- **Traceability:** [traceability_matrix.csv](traceability_matrix.csv)  
-- **KPI / Backlog:** [kpi_backlog_sheet.csv](kpi_backlog_sheet.csv)
+All links below assume your files are placed **inside `Projects/MiniProject2_ProcessFlow/`**, unless noted otherwise. If your file paths differ, your links **must reflect that** — otherwise, they will break (404).
 
-> Tip: Open this page on GitHub and click every link above. In your own submission, your BRD’s **Links** section should mirror this list.
+### Required Artifacts
+
+| Artifact                | Expected File Name/Path                                        |
+| ----------------------- | -------------------------------------------------------------- |
+| **BRD v2**              | [`BRD_v2.md`](BRD_v2.md)                                       |
+| **Decision Log**        | [`decision_log.md`](decision_log.md)                           |
+| **Current Process Map** | ![Current](process_current.png)                                |
+| **Target Process Map**  | ![Target](process_target.png)                                  |
+| **OpenAPI Spec**        | [`openapi.yaml`](openapi.yaml) *(put this in the same folder)* |
+| **Postman Collection**  | [`postman_collection.json`](postman_collection.json)           |
+| **UAT Plan**            | [`uat_test_plan.md`](uat_test_plan.md)                         |
+| **UAT Test Cases**      | [`uat_test_cases.csv`](uat_test_cases.csv)                     |
+| **Traceability Matrix** | [`traceability_matrix.csv`](traceability_matrix.csv)           |
+| **KPI / Backlog Sheet** | [`kpi_backlog_sheet.csv`](kpi_backlog_sheet.csv)               |
+
+> ✅ **Sanity Check:** After committing your files, open your repo on GitHub and click **each link** above. If any give you a 404, your path is wrong — **fix it before submitting.**
 
 ---
 
 ## 📘 BRD v2 Snapshot (Above the Fold)
 
-**Executive Summary (≤150 words, decision-first).**  
+**Executive Summary (≤150 words, decision-first):**
 This initiative improves {{target outcome}} for {{audience}} by {{timeframe}}. Success is measured by **KPI1** (target {{n}}) and **KPI2** (target {{n}}). In scope: {{flows/systems}}. Out of scope: {{deferrals}}. Top risks include vendor rate-limits and AC ambiguity; mitigations include idempotent retries, error contracts, and UAT coverage. See **Links** for Jira scope, API, UAT, and KPIs.
 
-**Scope (In/Out) — Example Lines**
-- **In:** Order create/list/status; auth; rate-limit handling  
-- **Out:** Loyalty points, returns (phase 2)
+**Scope (In/Out):**
 
-**Actors**
-- Cust, Ops, Fin, Eng, BI
+* **In:** Order create/list/status; auth; rate-limit handling
+* **Out:** Loyalty points, returns (phase 2)
 
-**User Stories + AC (excerpt)**
-- **US-001 Place Order**  
-  - **AC-1.1**: Given valid cart/payment, when submit, then order ID returns ≤2s  
-  - **AC-1.2**: Given declined payment, when submit, then reason shown; **no order** created
+**Actors:**
+Cust, Ops, Fin, Eng, BI
 
-**Risks & Mitigations (excerpt)**
-- Vendor 429s → Backoff, cache, alert; KPI monitor (Owner: Eng)
+**User Stories + AC (excerpt):**
 
-**KPIs (excerpt)**
-- Lead time (order→ship) < 48h (Owner: Ops; Weekly)
+* **US-001 Place Order**
+
+  * **AC-1.1**: Given valid cart/payment, when submit, then order ID returns ≤2s
+  * **AC-1.2**: Given declined payment, when submit, then reason shown; **no order** created
+
+**Risks & Mitigations (excerpt):**
+
+* Vendor 429s → Backoff, cache, alert; KPI monitor (Owner: Eng)
+
+**KPIs (excerpt):**
+
+* Lead time (order→ship) < 48h (Owner: Ops; Weekly)
 
 ---
 
 ## 🗓 Decision Log (Excerpt)
 
-See: [decision_log.md](decision_log.md)
+See: [`decision_log.md`](decision_log.md)
 
-| Date       | Decision                              | Owner     | Due        | Rationale                   | Status | Link            |
-|------------|----------------------------------------|-----------|------------|-----------------------------|--------|-----------------|
-| 2025-09-01 | Add idempotency key to payment capture | Fin Lead  | 2025-09-08 | Prevent duplicates on retry | Open   | {{JIRA_LINK_2}} |
+| Date       | Decision                               | Owner    | Due        | Rationale                   | Status | Link              |
+| ---------- | -------------------------------------- | -------- | ---------- | --------------------------- | ------ | ----------------- |
+| 2025-09-01 | Add idempotency key to payment capture | Fin Lead | 2025-09-08 | Prevent duplicates on retry | Open   | {{JIRA\_LINK\_2}} |
 
 ---
 
 ## 🗺 Process Maps
 
-**Rendered PNGs**:  
-- Current: ![Current](process_current.png)  
-- Target: ![Target](process_target.png)
+Rendered PNGs (you must **commit these image files**):
 
-**Source** (see [process_notes.md](process_notes.md)) contains two **Mermaid** diagrams (<12 nodes each) and the export steps to produce these PNGs.
+* **Current State** → ![Current](process_current.png)
+* **Target State** → ![Target](process_target.png)
+
+> 📝 You must also include a [`process_notes.md`](process_notes.md) file showing your **Mermaid** source and how the diagrams were exported.
 
 ---
 
-## 🔌 API & Postman (Validation Snapshot)
+## 🔌 API & Postman
 
-**OpenAPI**: [openapi.yaml](../../tools/openapi.yaml) (3.0.3, bearer auth, examples, errors 400/401/404/409/429/500).
+* **OpenAPI Spec:** [`openapi.yaml`](openapi.yaml)
+  Must support: bearer auth, examples, error responses (400, 401, 404, 409, 429, 500).
+* **Postman Collection:** [`postman_collection.json`](postman_collection.json)
 
-**Postman Collection**: [postman_collection.json](postman_collection.json)  
-- Variables: `{{baseUrl}}`, `{{token}}`, `{{orderId}}`  
-- Each endpoint has **≥2 tests** (status, body field, response time < 2000ms).  
-- Example test (Create Order):
+**Postman Collection Requirements:**
+
+* Use variables: `{{baseUrl}}`, `{{token}}`, `{{orderId}}`
+* Each endpoint must have **≥2 tests**: status code, body field, and response time < 2000ms
+
+Example test:
+
 ```js
 pm.test('Status 201', () => pm.response.to.have.status(201));
 pm.test('Body has id', () => pm.expect(pm.response.json()).to.have.property('id'));
 pm.test('Response < 2000ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));
-````
+```
 
 ---
 
 ## 🧪 UAT Pack
 
-**Plan**: [uat\_test\_plan.md](uat_test_plan.md)
+* **Plan:** [`uat_test_plan.md`](uat_test_plan.md)
+* **Test Cases CSV:** [`uat_test_cases.csv`](uat_test_cases.csv)
+* **Traceability Matrix:** [`traceability_matrix.csv`](traceability_matrix.csv)
 
-* Scope/Out of Scope, Env & Data, Roles, Entry/Exit, Risks, Reporting cadence.
-
-**Test Cases (CSV)**: [uat\_test\_cases.csv](uat_test_cases.csv) *(sample rows)*
+🧾 **CSV Formatting:** Headers must match exactly. Sample:
 
 ```
 Test ID,Story,AC ID,Type,Priority,Preconditions,Steps,Expected Result,Data/Role,Status
 TC-001,US-001,AC-1.1,Positive,High,"Admin logged in","POST /orders (valid)","201 + id",Admin; valid payload,Not Run
-TC-002,US-001,AC-1.1,Negative,High,"Admin logged in","POST /orders (invalid card)","400 BAD_REQUEST; no order",Admin; invalid,Not Run
-```
-
-**Traceability (CSV)**: [traceability\_matrix.csv](traceability_matrix.csv) *(no orphans)*
-
-```
-Story,AC ID,Test ID,Type,Priority,Status
-US-001,AC-1.1,TC-001,Positive,High,Not Run
-US-001,AC-1.1,TC-002,Negative,High,Not Run
 ```
 
 ---
 
-## 📊 KPI / Backlog (CSV)
+## 📊 KPI / Backlog Sheet
 
-See: [kpi\_backlog\_sheet.csv](kpi_backlog_sheet.csv)
+* File: [`kpi_backlog_sheet.csv`](kpi_backlog_sheet.csv)
 
-**Backlog Ops**
+Your sheet must show:
 
-* Overdue flag, Aging, Throughput computed in your sheet.
+* KPI definitions and owners
+* Backlog with aging, throughput, flags
 
-**KPI Scorecard (example rendering)**
+Sample KPI table:
 
 | KPI                      | Value | Target | Status | Owner | Next Review |
 | ------------------------ | ----: | -----: | :----: | :---- | :---------- |
@@ -125,46 +136,50 @@ See: [kpi\_backlog\_sheet.csv](kpi_backlog_sheet.csv)
 
 ---
 
-## ✅ Submission Checklist (Student)
+## ✅ Submission Checklist (for Students)
 
-* [ ] All required files exist at exact paths in `Projects/MiniProject2_ProcessFlow/`.
-* [ ] **BRD links work** (open each on GitHub).
-* [ ] Mermaid renders; **both PNGs committed**.
-* [ ] OpenAPI parses; Postman imports; tests present.
-* [ ] Test cases cover **positive + negative/edge** per AC.
-* [ ] Traceability has **no orphans**.
-* [ ] KPI CSV includes at least **2 KPIs with owners/targets**.
-
----
-
-## 🧮 Self-Assessment (Rubric Ready)
-
-| Category                              | Max | Self | Notes |
-| ------------------------------------- | --: | ---: | ----- |
-| Traceability (Story↔AC↔Test↔API)      |  25 |      |       |
-| Diagrams (clarity, handoffs)          |  20 |      |       |
-| API realism (errors, examples, tests) |  20 |      |       |
-| UAT depth & coverage                  |  20 |      |       |
-| KPI/ops readiness                     |  15 |      |       |
-| **Total (Pass ≥ 80; no < 60)**        | 100 |      |       |
+* [ ] All files above exist in `Projects/MiniProject2_ProcessFlow/`
+* [ ] All links open correctly **on GitHub** (no 404s)
+* [ ] Mermaid blocks render and **PNGs are committed**
+* [ ] Postman imports successfully and has tests
+* [ ] Positive + negative test cases written
+* [ ] Traceability matrix has **no missing links**
+* [ ] KPI CSV includes **at least 2 KPIs with owners and targets**
 
 ---
 
-## 🆘 Common Issues (and fixes)
+## 🧮 Self-Assessment (for Rubric)
 
-* **Broken relative links** → copy exact filenames/paths; click-test on GitHub.
-* **Mermaid doesn’t render** → block must start with ` ```mermaid ` and not be nested/indented.
-* **CSV headers wrong** → use headers exactly as provided.
-* **No idempotency** → add idempotency key in API + test for duplicate submit.
+| Category                                | Max | Self | Notes |
+| --------------------------------------- | --: | ---: | ----- |
+| Traceability (Story↔AC↔Test↔API)        |  25 |      |       |
+| Diagrams (clarity, handoffs)            |  20 |      |       |
+| API realism (errors, examples, tests)   |  20 |      |       |
+| UAT depth & coverage                    |  20 |      |       |
+| KPI/ops readiness                       |  15 |      |       |
+| **Total (Pass ≥ 80; no category < 60)** | 100 |      |       |
 
 ---
 
-### Reviewer Notes (What we look for)
+## 🧯 Common Pitfalls (and Fixes)
 
-* Can we follow links from BRD to every artifact without hunting?
-* Do diagrams show fewer than 12 nodes with clear handoffs?
-* Do Postman tests assert status, body, and latency?
-* Does traceability prove coverage (no hand-waving)?
-* Do KPIs communicate “what changed and why” with owners/dates?
+| Problem                          | Solution                                                 |
+| -------------------------------- | -------------------------------------------------------- |
+| 🔗 Broken links (404)            | Click-test **every link on GitHub** before submitting    |
+| 🖼 Mermaid diagrams don’t render | Use triple-backticks with `mermaid`; avoid indentation   |
+| 📊 CSVs have incorrect headers   | Copy headers from this file exactly                      |
+| ❌ Missing idempotency            | Add key to API + verify in test case                     |
+| 📁 Wrong folder structure        | Ensure files are in `Projects/MiniProject2_ProcessFlow/` |
 
-```
+---
+
+## 🔍 Reviewer Tips (What We Look For)
+
+* Links in the BRD point to all key artifacts
+* Process diagrams are clear, readable, and show fewer than 12 nodes
+* Postman tests check status, body field, and response time
+* Traceability matrix is complete and accurate
+* KPIs clearly communicate outcomes, owners, and targets
+
+---
+
