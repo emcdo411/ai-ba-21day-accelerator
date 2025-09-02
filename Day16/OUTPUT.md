@@ -185,13 +185,14 @@ Plain text only. No URLs.
 
 ```mermaid
 flowchart TD
-  A[RSS Items] -->|batch| B[Idempotency Check (KV)]
-  B -->|new| C[LLM Summarize]
-  B -->|duplicate| H[End]
-  C --> D[Post to #daily-digest]
-  D --> E[Success Log]
-  C -->|error| F[Retry 1m -> 4m -> 15m]
-  F -->|exhausted| G[DLQ + Page]
+  A["RSS Items"] -->|batch| B["Idempotency Check (KV)"]
+  B -->|new| C["LLM Summarize"]
+  B -->|duplicate| H["End"]
+  C --> D["Post to #daily-digest"]
+  D --> E["Success Log"]
+  C -->|error| F["Retry 1m/4m/15m"]
+  F -->|exhausted| G["DLQ + Page"]
+
 ```
 
 Notes on limits/rate limits:
